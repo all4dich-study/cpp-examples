@@ -12,7 +12,7 @@
 
 int main(int argc, char* argv[]) {
     // insert code here...
-    int number = 10;
+    int number = 30000;
     int numArray[number] ;
     time_t rawtime;
     srand(time(&rawtime));
@@ -27,11 +27,11 @@ int main(int argc, char* argv[]) {
     }
     std::cout<<std::endl;
     for ( int x=0;x<number;x++){
-        for (int y=x;y>0;y--){
-            if ( numArray[y]<numArray[y-1]){
-                int temp = numArray[y];
-                numArray[y] = numArray[y-1];
-                numArray[y-1] = temp;
+        for ( int y=0;y<number-(x+1);y++){
+            if ( numArray[y] > numArray[y+1]){
+                int temp = numArray[y+1];
+                numArray[y+1]=numArray[y];
+                numArray[y]=temp;
             }
             for (int k=0;k<number;k++){
                 std::cout<<numArray[k]<<",";

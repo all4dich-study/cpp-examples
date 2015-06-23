@@ -18,26 +18,26 @@ int main(int argc, char* argv[]) {
     srand(time(&rawtime));
     for (int j=0; j<number; j++) {
         int temp = rand() % 50;
-        //*(numArray+j) = (number - j);
+//        *(numArray+j) = (number - j);
         *(numArray+j) = temp;
     }
-    
+   
     for (int i=0;i<number;i++){
         std::cout<<*(numArray+i)<<",";
     }
+    
     std::cout<<std::endl;
-    for ( int x=0;x<number;x++){
-        for (int y=x;y>0;y--){
-            if ( numArray[y]<numArray[y-1]){
-                int temp = numArray[y];
-                numArray[y] = numArray[y-1];
-                numArray[y-1] = temp;
-            }
-            for (int k=0;k<number;k++){
-                std::cout<<numArray[k]<<",";
-            }
-            std::cout<<std::endl;
+    for ( int x=1;x<number;x++){
+        int temp = numArray[x];
+        int y = 0;
+        for (y=x-1;(y>=0 && numArray[y]>temp);y--){
+                numArray[y+1] = numArray[y];
         }
+        numArray[y+1] = temp;
+        for (int k=0;k<number;k++){
+            std::cout<<numArray[k]<<",";
+        }
+        std::cout<<std::endl;
     }
     return 0;
 }

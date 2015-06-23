@@ -26,18 +26,20 @@ int main(int argc, char* argv[]) {
         std::cout<<*(numArray+i)<<",";
     }
     std::cout<<std::endl;
-    for ( int x=0;x<number;x++){
-        for (int y=x;y>0;y--){
-            if ( numArray[y]<numArray[y-1]){
-                int temp = numArray[y];
-                numArray[y] = numArray[y-1];
-                numArray[y-1] = temp;
+    for ( int x=1;x<number;x++){
+        int temp = numArray[x];
+        for (int y=x-1;y>=0;y--){
+            if ( numArray[y]>temp){
+                numArray[y+1] = numArray[y];
             }
-            for (int k=0;k<number;k++){
-                std::cout<<numArray[k]<<",";
+            if ( numArray[y]>temp){
+                numArray[y] = temp;
             }
-            std::cout<<std::endl;
         }
+        for (int k=0;k<number;k++){
+            std::cout<<numArray[k]<<",";
+        }
+        std::cout<<std::endl;
     }
     return 0;
 }
