@@ -10,9 +10,11 @@
 #include <cstdlib>
 #include <ctime>
 
+using namespace std;
+
 int main(int argc, char* argv[]) {
     // insert code here...
-    int number = 10;
+    int number = atoi(argv[1]);
     int numArray[number] ;
     time_t rawtime;
     srand(time(&rawtime));
@@ -23,21 +25,29 @@ int main(int argc, char* argv[]) {
     }
    
     for (int i=0;i<number;i++){
-        std::cout<<*(numArray+i)<<",";
+        cout<<*(numArray+i)<<",";
     }
     
-    std::cout<<std::endl;
+    cout<<endl;
     for ( int x=1;x<number;x++){
         int temp = numArray[x];
         int y = 0;
-        for (y=x-1;(y>=0 && numArray[y]>temp);y--){
+        for (y=x-1;y>=0 ;y--){
+            if ( numArray[y] > temp) {
                 numArray[y+1] = numArray[y];
+                for (int k=0;k<number;k++){
+                    cout<<numArray[k]<<",";
+                }
+                cout<<endl;
+            }else{
+                break;
+            }
         }
         numArray[y+1] = temp;
         for (int k=0;k<number;k++){
-            std::cout<<numArray[k]<<",";
+            cout<<numArray[k]<<",";
         }
-        std::cout<<std::endl;
+        cout<<endl;
     }
     return 0;
 }
