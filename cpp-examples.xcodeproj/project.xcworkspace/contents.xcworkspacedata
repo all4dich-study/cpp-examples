@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TestProject2.xcodeproj">
+      location = "self:/Users/sunjoo/temp/Chapter 4 source/TestProject2/cpp-examples.xcodeproj">
    </FileRef>
 </Workspace>

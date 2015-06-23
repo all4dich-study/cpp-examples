@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DCE2D8971B3819FB0091B79A"
-               BuildableName = "TestProject2"
-               BlueprintName = "TestProject2"
-               ReferencedContainer = "container:TestProject2.xcodeproj">
+               BuildableName = "cpp-examples"
+               BlueprintName = "cpp-examples"
+               ReferencedContainer = "container:cpp-examples.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCE2D8971B3819FB0091B79A"
-            BuildableName = "TestProject2"
-            BlueprintName = "TestProject2"
-            ReferencedContainer = "container:TestProject2.xcodeproj">
+            BuildableName = "cpp-examples"
+            BlueprintName = "cpp-examples"
+            ReferencedContainer = "container:cpp-examples.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCE2D8971B3819FB0091B79A"
-            BuildableName = "TestProject2"
-            BlueprintName = "TestProject2"
-            ReferencedContainer = "container:TestProject2.xcodeproj">
+            BuildableName = "cpp-examples"
+            BlueprintName = "cpp-examples"
+            ReferencedContainer = "container:cpp-examples.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCE2D8971B3819FB0091B79A"
-            BuildableName = "TestProject2"
-            BlueprintName = "TestProject2"
-            ReferencedContainer = "container:TestProject2.xcodeproj">
+            BuildableName = "cpp-examples"
+            BlueprintName = "cpp-examples"
+            ReferencedContainer = "container:cpp-examples.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
