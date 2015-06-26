@@ -10,34 +10,41 @@
 #include <cstdlib>
 #include <ctime>
 
+using namespace std;
+
 int main(int argc, char* argv[]) {
     // insert code here...
-    int number = 30000;
+    int number = atoi(argv[1]);
     int numArray[number] ;
     time_t rawtime;
     srand(time(&rawtime));
     for (int j=0; j<number; j++) {
-        int temp = rand() % 50;
-        //*(numArray+j) = (number - j);
+        int temp = rand() % 40000;
+//        *(numArray+j) = (number - j);
         *(numArray+j) = temp;
     }
-    
+   
     for (int i=0;i<number;i++){
-        std::cout<<*(numArray+i)<<",";
+        cout<<*(numArray+i)<<",";
     }
-    std::cout<<std::endl;
-    for ( int x=0;x<number;x++){
-        for ( int y=0;y<number-(x+1);y++){
-            if ( numArray[y] > numArray[y+1]){
-                int temp = numArray[y+1];
-                numArray[y+1]=numArray[y];
-                numArray[y]=temp;
+    
+    cout<<endl;
+    for ( int x=1;x<number;x++){
+        int temp = numArray[x];
+        int y = 0;
+        for (y=x-1;y>=0 ;y--){
+            if ( numArray[y] > temp) {
+                numArray[y+1] = numArray[y];
+            }else{
+                break;
             }
-            for (int k=0;k<number;k++){
-                std::cout<<numArray[k]<<",";
-            }
-            std::cout<<std::endl;
         }
+        numArray[y+1] = temp;
+
     }
+    for (int k=0;k<number;k++){
+        cout<<numArray[k]<<",";
+    }
+    cout<<endl;    
     return 0;
 }

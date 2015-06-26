@@ -15,39 +15,37 @@ using namespace std;
 int main(int argc, char* argv[]) {
     // insert code here...
     int number = atoi(argv[1]);
+    //int number = 10;
     int numArray[number] ;
     time_t rawtime;
     srand(time(&rawtime));
     for (int j=0; j<number; j++) {
-        int temp = rand() % 50;
-//        *(numArray+j) = (number - j);
+        int temp = rand() % 40000;
         *(numArray+j) = temp;
     }
    
     for (int i=0;i<number;i++){
         cout<<*(numArray+i)<<",";
     }
-    
+   
     cout<<endl;
-    for ( int x=1;x<number;x++){
-        int temp = numArray[x];
+    for ( int x=0;x<number;x++){
+        int minIndex = x;
         int y = 0;
-        for (y=x-1;y>=0 ;y--){
-            if ( numArray[y] > temp) {
-                numArray[y+1] = numArray[y];
-                for (int k=0;k<number;k++){
-                    cout<<numArray[k]<<",";
-                }
-                cout<<endl;
-            }else{
-                break;
+        for (y = x+1; y <= number; y++)
+        {
+            if ( numArray[minIndex] > numArray[y]){
+                minIndex = y;
             }
         }
-        numArray[y+1] = temp;
-        for (int k=0;k<number;k++){
-            cout<<numArray[k]<<",";
-        }
-        cout<<endl;
+        int temp = numArray[minIndex];
+        numArray[minIndex]=numArray[x];
+        numArray[x]=temp;
     }
+    for (int k=0;k<number;k++){
+        cout<<numArray[k]<<",";
+    }
+    cout<<endl;
+
     return 0;
 }

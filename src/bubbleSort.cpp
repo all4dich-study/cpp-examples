@@ -18,7 +18,6 @@ int main(int argc, char* argv[]) {
     srand(time(&rawtime));
     for (int j=0; j<number; j++) {
         int temp = rand() % 50;
-        //*(numArray+j) = (number - j);
         *(numArray+j) = temp;
     }
     
