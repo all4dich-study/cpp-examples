@@ -2,4 +2,4 @@ dist: trusty
 language: c
 script:
 - chmod +x build.sh
-- ./build.sh
+- ./build.sh && echo "End:"
